@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.apicontroller;
 
 import com.example.demo.model.Student;
 import com.example.demo.model.StudentDto;
