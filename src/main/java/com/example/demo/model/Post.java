@@ -7,6 +7,9 @@ public class Post {
     private int postId;
     private String title;
     private String body;
-    private int likes;
+    private Integer likes;
 
+    public Post() {
+        likes = 0;
+    }
 }

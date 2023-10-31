@@ -50,16 +50,11 @@ public class WebPostController {
 
     @PostMapping("/update/{postId}")
     public String update(@PathVariable int postId, @ModelAttribute Post post,  Model model) {
-        Post updated = postService.getPost(postId);
-        updated.setTitle(post.getTitle());
-        updated.setBody(post.getBody());
-        updated.setLikes(post.getLikes());
-        postService.updatePost(postId, updated);
-        model.addAttribute("posts", updated);
+        postService.updatePost(postId, post);
         return "redirect:/posts";
     }
 
-    @DeleteMapping("/delete/{postId}")
+    @RequestMapping("/delete/{postId}")
     public String delete(@PathVariable int postId, Model model) {
         postService.deletePost(postId);
         return "redirect:/posts";

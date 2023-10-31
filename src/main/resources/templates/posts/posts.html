@@ -7,10 +7,12 @@
 <body>
 
 <table>
-    <tr><th>번호</th><th>제목</th></tr>
+    <tr><th>번호</th><th>제목</th><th>좋아요</th></tr>
     <tr th:each="post : ${posts}">
         <td><a th:text="${post.postId}" th:href="@{/posts/{postId}(postId=${post.postId})}"></a></td>
         <td><a th:text="${post.title}" th:href="@{/posts/{postId}(postId=${post.postId})}"></a></td>
+        <td><span th:text="${post.likes}"></span></td>
+        <td><button th:onclick="|location.href='@{/posts/delete/{postId}(postId=${post.postId})}'|" >삭제</button></td>
     </tr>
 </table>
 <a th:href="@{/posts/add}">추가하기</a>

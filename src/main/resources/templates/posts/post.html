@@ -6,8 +6,7 @@
 </head>
 <body>
 <div th:each="post : ${post}">
-    번호: <span th:text="${post.postId}"></span>
-    제목: <span th:text="${post.title}"></span>
+    <h2 th:text="${post.title}"></h2>
     내용: <span th:text="${post.body}"></span>
     좋아요: <span th:text="${post.likes}"></span>
 </div>
